@@ -1,0 +1,35 @@
+#WEB library
+
+import streamlit.components.v1 as components
+
+from secrets import choice
+
+import streamlit as st
+
+#from OpenSSL import SSL
+
+#opencv library
+
+import face_recognition
+
+from datetime import datetime
+
+from PIL import Image
+
+import pandas as pd
+
+import numpy as np
+
+import cv2
+
+import os
+
+import time
+
+from datetime import date
+
+from tempfile import NamedTemporaryFile
+
+import shutil
+
+from csv import DictReader, DictWriter
