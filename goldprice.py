@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import datetime
+import statsmodels.api as sm
 from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.stattools import acf, pacf
@@ -593,7 +594,7 @@ model_s = pm.auto_arima(data_train, start_p=1, start_q=1,
 # In[ ]:
 
 
-import statsmodels.api as sm
+
 #mod2 = sm.tsa.statespace.SARIMAX(data_train,order = (6,1,6),seasonal_order = (6,1,6,4))
 mod2 = sm.tsa.statespace.SARIMAX(data_train,order = (6,1,6),seasonal_order = (6,1,6,12))
 #mod2 = sm.tsa.statespace.SARIMAX(data_train,order = (6,1,6),seasonal_order = (6,1,6,52))
@@ -604,7 +605,7 @@ print(result_p.summary())
 # In[ ]:
 
 
-import statsmodels.api as sm
+
 #mod3 = sm.tsa.statespace.SARIMAX(data_train,order = (7,1,7),seasonal_order = (7,1,7,4))
 mod3 = sm.tsa.statespace.SARIMAX(data_train,order = (7,1,7),seasonal_order = (7,1,7,12))
 #mod3 = sm.tsa.statespace.SARIMAX(data_train,order = (7,1,7),seasonal_order = (7,1,7,52))
@@ -615,7 +616,7 @@ print(result_r.summary())
 # In[ ]:
 
 
-import statsmodels.api as sm
+
 mod4 = sm.tsa.statespace.SARIMAX(data_train,order = (0,1,0),seasonal_order = (0,1,0,12))
 result_q = mod4.fit()
 print(result_q.summary())
