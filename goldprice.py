@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[14]:
 
 
 #import 
@@ -16,118 +12,17 @@ from statsmodels.tsa.stattools import acf, pacf
 from statsmodels.tsa.arima_model import ARIMA
 
 
-# In[15]:
-
-
-data = pd.read_csv("H:\My_projects\Forecast_project\Gold_data.csv",parse_dates=True, index_col="date")
-data.shape
-
-
-# In[16]:
-
-
-#Exploratory Data Analysis
-data.head()
-
-
-# In[17]:
-
-
-data.tail()
-
-
-# In[18]:
-
-
-list(data)
-
-
-# In[19]:
-
-
-type(data)
-
-
-# In[20]:
-
-
-data.ndim
-
-
-# In[21]:
-
-
-data.info()
-
-
-# In[22]:
-
-
-data.index
-
-
-# In[23]:
-
-
-#describe for all mean mode information
-data.describe()
-
-
-# In[24]:
-
-
-#finding null value
-data.isnull()
-data.isnull().sum()
-
-
-# In[25]:
-
-
-#finding duplicates
-data[data.duplicated()]
-
-
-# In[26]:
-
-
+data = pd.read_csv("H:\My_app\Gold_data.csv",parse_dates=True, index_col="date")
 data.skew()
-
-
-# In[27]:
-
-
-#Outlier Check
-outliar = sns.boxplot(data['price'])
-
-
-# In[28]:
-
 
 #corelation
 data.corr()
 
-
-# In[29]:
-
-
 sns.kdeplot(data['price'])
-
-
-# In[30]:
-
 
 data.plot(figsize = (15,8),color = 'red')
 
-
-# In[ ]:
-
-
 data.plot(xlim = ['2019-01-01','2021-12-01'],ylim = [2700,5000],figsize = (15,8),ls='--',c='green')
-
-
-# In[ ]:
-
 
 data.resample(rule='A').mean().plot()
 data.resample(rule='A').max().plot()
