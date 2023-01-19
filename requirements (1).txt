@@ -1,3 +1,4 @@
 pandas
 sklearn
 streamlit 
+matplotlib.pyplot as plt
